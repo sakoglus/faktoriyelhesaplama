@@ -1,21 +1,27 @@
 #include <stdio.h>
-#include <stdlib.h>
-
-int main(int argc, char *argv[]) {
-	
-	int a;
-	int fact= 1;
-	
-	printf("Faktoriyel hesabi yapilacak sayiyi girin:");
-	scanf("%d",&a);
-	while (a != 0){
-		
-	printf("%d\n",a);
-	fact= fact *a;
-	a--;
-
-}
-	printf("Faktoriyel: %d",fact);
-	
-	return 0;
+#include <conio.h>
+ 
+//Faktoriyel Hesaplama
+ 
+int main(){  
+ 
+    int sayi, sonuc=1; //DİKKAT Sonuc değerini 1 olarak atanması önemli!!!
+ 
+    printf("Sayi Giriniz: ");
+    scanf("%d", &sayi);
+ 
+    if(sayi >= 0){   // Sayı 0 ve 0'dan büyük ise faktöriyel hesabı yapar!!!
+    
+        for(int i=1;i<=sayi;i++){
+            sonuc *= i;
+        }
+        
+        printf("%d!= %d",sayi, sonuc);        
+    }
+    
+    else
+        printf("Negatif deger girmeyiniz!");
+ 
+    getch();   // Programın kapanmaması için (Klavyeden bir değer bekler)
+    return 0; // Programı sonlandırır
 }
